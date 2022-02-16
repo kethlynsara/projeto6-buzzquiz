@@ -12,6 +12,9 @@
     <!--Reset css-->
     <link rel="stylesheet" href="style/reset.css">
 
+    <!--Imagens-->
+    <link rel="stylesheet" href="Imagens">
+
     <!--Fontes-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -160,10 +163,10 @@
         <h3>Comece pelo começo</h3>
 
         <div class="criarQuizInfoBasica">
-            <input type="text" placeholder="Título do seu quizz">
-            <input type="text" placeholder="URL da imagem do seu quizz">
-            <input type="text" placeholder="Quantidade de perguntas do quizz">
-            <input type="text" placeholder="Quantidade de níveis do quizz">
+            <input type="text" placeholder="  Título do seu quizz">
+            <input type="text" placeholder="  URL da imagem do seu quizz">
+            <input type="text" placeholder="  Quantidade de perguntas do quizz">
+            <input type="text" placeholder="  Quantidade de níveis do quizz">
         </div>
 
         <div class="botaoCriarQuizInfoBasica">
@@ -173,9 +176,101 @@
 
     <!-- ----------------------------Layout Mobile (Tela 3.1)--------------------------------- -->
 
-    <!--Bibliotecas-->
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script src="script.js"></script>
+    <!-- ----------------------------Layout Mobile (Tela 3.2)--------------------------------- -->
+
+    <!--Topo da página (título)-->
+    <header class="header-tela3-2">
+        <h1>BuzzQuizz</h1>
+    </header>
+
+    <!--Conteúdo principal (Criar Quizz - Perguntas do Quizz)-->
+    <main class="main-tela3-2">
+        <h3>Crie suas perguntas</h3>
+
+        <!--Parte 1 das perguntas-->
+        <div class="criarQuizPerguntas">
+            <h4>Pergunta 1</h4>
+            <input type="text" placeholder="  Texto da pergunta">
+            <input type="text" placeholder="  Cor de fundo da pergunta">
+
+            <h4>Resposta correta</h4>
+            <input type="text" placeholder="  Resposta correta">
+            <input type="text" placeholder="  URL da imagem">
+
+            <h4>Respostas incorretas</h4>
+            <input type="text" placeholder="  Resposta incorreta 1">
+            <input class="input-espaco" type="text" placeholder="  URL da imagem 1">
+
+            <input type="text" placeholder="  Resposta incorreta 2">
+            <input class="input-espaco" type="text" placeholder="  URL da imagem 2">
+
+            <input type="text" placeholder="  Resposta incorreta 3">
+            <input type="text" placeholder="  URL da imagem 3">
+        </div>
+
+        <!--Parte de edição para a pergunta 2-->
+        <div class="criarQuizPerguntas-CaixaPergunta">
+            <h4>Pergunta 2</h4>
+            <img src="Imagens/icon-editar.png" alt="Editar">
+        </div>
+
+        <!--Parte 2 das perguntas-->
+        <div class="criarQuizPerguntas">
+            <h4>Pergunta 2</h4>
+            <input type="text" placeholder="  Texto da pergunta">
+            <input type="text" placeholder="  Cor de fundo da pergunta">
+
+            <h4>Resposta correta</h4>
+            <input type="text" placeholder="  Resposta correta">
+            <input type="text" placeholder="  URL da imagem">
+
+            <h4>Respostas incorretas</h4>
+            <input type="text" placeholder="  Resposta incorreta 1">
+            <input class="input-espaco" type="text" placeholder="  URL da imagem 1">
+
+            <input type="text" placeholder="  Resposta incorreta 2">
+            <input class="input-espaco" type="text" placeholder="  URL da imagem 2">
+
+            <input type="text" placeholder="  Resposta incorreta 3">
+            <input type="text" placeholder="  URL da imagem 3">
+        </div>
+
+        <!--Parte de edição para a pergunta 3-->
+        <div class="criarQuizPerguntas-CaixaPergunta">
+            <h4>Pergunta 3</h4>
+            <img src="Imagens/icon-editar.png" alt="Editar">
+        </div>
+
+        <!--Parte 3 das perguntas-->
+        <div class="criarQuizPerguntas">
+            <h4>Pergunta 3</h4>
+            <input type="text" placeholder="  Texto da pergunta">
+            <input type="text" placeholder="  Cor de fundo da pergunta">
+
+            <h4>Resposta correta</h4>
+            <input type="text" placeholder="  Resposta correta">
+            <input type="text" placeholder="  URL da imagem">
+
+            <h4>Respostas incorretas</h4>
+            <input type="text" placeholder="  Resposta incorreta 1">
+            <input class="input-espaco" type="text" placeholder="  URL da imagem 1">
+
+            <input type="text" placeholder="  Resposta incorreta 2">
+            <input class="input-espaco" type="text" placeholder="  URL da imagem 2">
+
+            <input type="text" placeholder="  Resposta incorreta 3">
+            <input type="text" placeholder="  URL da imagem 3">
+        </div>
+
+        <div class="botaoCriarPerguntas">
+            <button>Prosseguir pra criar níveis</button>
+        </div>
+
+        <!-- ----------------------------Layout Mobile (Tela 3.2)--------------------------------- -->
+
+        <!--Bibliotecas-->
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script src="script.js"></script>
 
 </body>
 
