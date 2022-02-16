@@ -38,7 +38,45 @@ body {
 /*Configurações do layout para listagem do conteúdo principal*/
 .main-tela1 {
     width: 100%;
-    margin: 107px auto 0;
+    /* margin: 107px auto 0;*/
+    margin: 100px auto 0;
+}
+
+/*Configurações para a área de navegação que redireciona para a parte de criar um quiz*/
+.nav-tela1 {
+    width: 340px;
+    height: 181px;
+    margin: 0 auto 35px;
+    background: #FAFAFA;
+    border: 1px dashed #D5D5D5;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+.nav-tela1 p {
+    margin-top: 40px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    color: #B9B9B9;
+
+}
+
+.nav-tela1 button {
+    width: 151px;
+    height: 40px;
+    margin: 25px 95px;
+    background: #FAFAFA;
+    border: 1px dashed #EC362D;
+    box-sizing: border-box;
+    border-radius: 50px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 21px;
+    line-height: 25px;
+    color: #EC362D;
 }
 
 /*Configurações apenas para "Todos os Quizzes"*/
@@ -73,8 +111,9 @@ body {
     position: relative;
 }
 
-.main-tela1 .quizzesCriadosUsuario p, .quizzesCriadosPorTodos p {
+.main-tela1 .quizzesCriadosUsuario a, .quizzesCriadosPorTodos a {
     position: absolute;
+    text-decoration: none;
     font-style: normal;
     font-weight: normal;
     font-size: 19px;
@@ -82,18 +121,26 @@ body {
     color: #FFFFFF;
 }
 
-/*Configurações padrões que servem para a tag p dos "Seus Quizzes"*/
-.main-tela1 .quizzesCriadosUsuario p {
+/*Configurações padrões que servem para a tag a dos "Seus Quizzes"*/
+.main-tela1 .quizzesCriadosUsuario a {
     z-index: 5;
     left: 35px;
-    top: 290px;
+    top: 498px;
+    /* Não apagar os seguintes pixels. Eles serão necessários para quando o usuário já tiver criado um quiz
+    top: 282px; 
+    left: 35px;
+*/
 }
 
-/*Configurações padrões que servem para a tag p de "Todos os Quizzes"*/
-.main-tela1 .quizzesCriadosPorTodos p {
+/*Configurações padrões que servem para a tag a de "Todos os Quizzes"*/
+.main-tela1 .quizzesCriadosPorTodos a {
     z-index: 5;
     left: 35px;
-    top: 548px;
+    top: 756px;
+    /*Não apagar os seguintes pixels. Eles serão necessários para quando o usuário já tiver criado um quiz
+    left: 35px;
+    top: 540px;
+    */
 }
 
 /*Configurações apenas para a parte inicial dos "Seus Quizzes", abragendo o h3 e o icon */
@@ -105,6 +152,7 @@ body {
 .main-tela1 .quizzesCriadosUsuario .topo-quizzesCriadosUsuario #iconCriarQuiz {
     font-size: 30px;
     color: #EC362D;
+    display: none;
 }
 
 /* ----------------------------Layout Mobile (Tela 1)--------------------------------- */
