@@ -1,0 +1,287 @@
+/*Especificações gerais*/
+body {
+    background-color: #FAFAFA;
+    font-family: 'Roboto', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ----------------------------Layout Mobile (Tela 1)--------------------------------- */
+
+/*Parte superior (título da página)*/
+.header-tela1 {
+    height: 69px;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: #EC362D;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    z-index: 8;
+}
+
+.header-tela1 h1 {
+    margin-top: 13px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 37px;
+    line-height: 43px;
+    text-align: center;
+    align-items: center;
+    color: #FFFFFF;
+}
+
+/*Configurações do layout para listagem do conteúdo principal*/
+.main-tela1 {
+    width: 100%;
+    /* margin: 107px auto 0;*/
+    margin: 100px auto 0;
+}
+
+/*Configurações para a área de navegação que redireciona para a parte de criar um quiz*/
+.nav-tela1 {
+    width: 340px;
+    height: 181px;
+    margin: 0 auto 35px;
+    background: #FAFAFA;
+    border: 1px dashed #D5D5D5;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+.nav-tela1 p {
+    margin-top: 40px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    color: #B9B9B9;
+
+}
+
+.nav-tela1 button {
+    width: 151px;
+    height: 40px;
+    margin: 25px 95px;
+    background: #FAFAFA;
+    border: 1px dashed #EC362D;
+    box-sizing: border-box;
+    border-radius: 50px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 21px;
+    line-height: 25px;
+    color: #EC362D;
+}
+
+/*Configurações apenas para "Todos os Quizzes"*/
+.main-tela1 .quizzesCriadosPorTodos {
+    padding-top: 25px;
+}
+
+/*Configurações padrões que servem tanto para os elementos dentro de "Seus Quizzes", quanto para "Todos os Quizzes"*/
+.main-tela1 .quizzesCriadosUsuario, .quizzesCriadosPorTodos {
+    width: 340px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+.main-tela1 .quizzesCriadosUsuario h3, .quizzesCriadosPorTodos h3 {
+    margin-bottom: 16px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    color: #000000;
+}
+
+.main-tela1 .quizzesCriadosUsuario img, .quizzesCriadosPorTodos img {
+    margin-bottom: 13px;
+    width: 340px;
+    height: 181px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.main-tela1 .quizzesCriadosUsuario a, .quizzesCriadosPorTodos a {
+    position: absolute;
+    text-decoration: none;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 19px;
+    line-height: 22px;
+    color: #FFFFFF;
+}
+
+/*Configurações padrões que servem para a tag a dos "Seus Quizzes"*/
+.main-tela1 .quizzesCriadosUsuario a {
+    z-index: 5;
+    left: 35px;
+    top: 498px;
+    /* Não apagar os seguintes pixels. Eles serão necessários para quando o usuário já tiver criado um quiz
+    top: 282px; 
+    left: 35px;
+*/
+}
+
+/*Configurações padrões que servem para a tag a de "Todos os Quizzes"*/
+.main-tela1 .quizzesCriadosPorTodos a {
+    z-index: 5;
+    left: 35px;
+    top: 756px;
+    /*Não apagar os seguintes pixels. Eles serão necessários para quando o usuário já tiver criado um quiz
+    left: 35px;
+    top: 540px;
+    */
+}
+
+/*Configurações apenas para a parte inicial dos "Seus Quizzes", abragendo o h3 e o icon */
+.main-tela1 .quizzesCriadosUsuario .topo-quizzesCriadosUsuario {
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-tela1 .quizzesCriadosUsuario .topo-quizzesCriadosUsuario #iconCriarQuiz {
+    font-size: 30px;
+    color: #EC362D;
+    display: none;
+}
+
+/* ----------------------------Layout Mobile (Tela 1)--------------------------------- */
+
+
+/*                               Layout(Mobile) - Tela 2                                      */
+
+/* configurações gerais */
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #FAFAFA;
+}
+
+/* barra fixa do topo */
+.header-tela2 {
+    height: 69px;
+    width: 100%;
+    background-color: #EC362D;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding-top: 15px;
+    z-index: 8;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.header-tela2 h1 {
+    color: #FFF;
+    font-weight: 700;
+    font-size: 37px;
+    line-height: 43.36px;
+    text-align: center;
+}
+
+/*título do quizz e imagem com opacidade escura */
+.quizz-header {
+    margin-top: 53px;
+    margin-bottom: 24px;
+    width: 100%;
+    height: 142px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(https://www.animalepetshop.com.br/wp-content/uploads/2021/11/Spitz-Lula-Da-Pomernia-Creme-Perola-Fortaleza-Animale-Petshop.jpg); /* imagem do quizz com opacidade preta 60% */
+}
+.quizz-header p {
+    color:#FFF;
+    font-size: 19px;
+    line-height: 22px;
+    position: absolute; 
+    text-align: center; 
+    z-index: 5;
+    top: 130px;
+    left: 70px;
+} 
+
+/* main tela 2*/
+.box-respostas-impar, .box-respostas-par { /*divs com a pergunta e as opções de resposta do quizz*/
+    background-color: #FFF;
+    margin-bottom: 28px;
+    padding: 18px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.box-respostas-impar .pergunta {
+    background-color: #434CA0;
+}
+.box-respostas-par .pergunta {
+    background-color: #A0438D;
+}
+
+.pergunta { 
+    width: 100%;
+    height: 89px;
+    padding-top: 20px;
+    padding-bottom: 15px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.pergunta p {
+    color: #FFF;
+    text-align: center;
+    font-size: 19px;
+    line-height: 22px;
+    font-weight: bold;
+}
+
+.respostas { /*div que contém todas as opções de respostas*/
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.resposta { /*div que contém a imagem e o p (descrição da imagem)*/
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+.resposta p {
+    width: 163px;
+    margin-top: 5px;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 15px;
+}
+
+.opcao { /*div que contém só a imagem*/
+    width: 163px;
+    height: 133px;
+}
+.opcao img {
+    width: 163px;
+    height: 133px;
+}
+
+/* configurações de respostas certas e erradas */
+.resposta-certa {
+    color:#009C22;
+}
+.resposta-errada {
+    color: #FF0B0B;
+}
+
+/* efeito-opacidade */
+.box-respostas-impar .opacidade {
+    background: url(../images/image\ 3.png);
+    opacity: 0.3;
+}
+
+/*                               Layout(Mobile) - Tela 2                                      */
