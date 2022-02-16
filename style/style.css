@@ -306,6 +306,81 @@ body {
     opacity: 0.3;
 }
 
+/* Tela final - resultado do quizz  */
+.resultado-quizz {
+    background-color: #FFFFFF;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 34px;
+}
+.resultado-quizz .porcentagem-final {
+    background-color: #EC362D;
+    width: 100%;
+    height: 99px;
+    padding-top: 22px;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-bottom: 9px;
+}
+.resultado-quizz .porcentagem-final  p {
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 22px;
+    text-align: center;
+}
+.resultado-quizz .meme-final {
+    width: 100%;
+    height: 255px;
+    margin-bottom: 9px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.resultado-quizz .meme-final img {
+    width: 340px;
+    height: 255px;;
+}
+.resultado-quizz .descricao-resultado {
+    font-weight: bold;
+    font-size: 17px;
+    line-height: 20px;
+    color: #484848;
+    margin-bottom: 14px;
+}
+
+/* botoes de reiniciar o quizz e voltar para home */
+.botoes-finais {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.botoes-finais  button {
+    font-size: 18px;
+    line-height: 21px;
+    border: none;
+}
+.botoes-finais .reiniciar-quizz {
+    background-color: #EC362D;
+    border-radius: 15px;
+    width: 220.32px;
+    height: 44px;
+    margin-bottom: 8px;
+}
+.botoes-finais .reiniciar-quizz p {
+    color: #FFFFFF;
+    text-align: center;
+}
+.botoes-finais .voltar-home {
+    color: #818181;
+    background-color: #FFFFFF;
+    margin-bottom: 66px;
+}
 /*                               Layout(Mobile) - Tela 2                                      */
 
 /* ----------------------------Layout Mobile (Tela 3.1)--------------------------------- */
@@ -411,6 +486,7 @@ body {
 }
 
 /* ----------------------------Layout Mobile (Tela 3.1)--------------------------------- */
+
 
 /* ----------------------------Layout Mobile (Tela 3.2)--------------------------------- */
 
