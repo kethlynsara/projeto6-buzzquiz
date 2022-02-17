@@ -316,6 +316,7 @@ body {
     align-items: center;
     margin-bottom: 34px;
 }
+
 .resultado-quizz .porcentagem-final {
     background-color: #EC362D;
     width: 100%;
@@ -325,13 +326,15 @@ body {
     padding-right: 16px;
     margin-bottom: 9px;
 }
-.resultado-quizz .porcentagem-final  p {
+
+.resultado-quizz .porcentagem-final p {
     color: #FFFFFF;
     font-weight: bold;
     font-size: 19px;
     line-height: 22px;
     text-align: center;
 }
+
 .resultado-quizz .meme-final {
     width: 100%;
     height: 255px;
@@ -341,10 +344,13 @@ body {
     align-items: center;
     justify-content: center;
 }
+
 .resultado-quizz .meme-final img {
     width: 340px;
-    height: 255px;;
+    height: 255px;
+    ;
 }
+
 .resultado-quizz .descricao-resultado {
     font-weight: bold;
     font-size: 17px;
@@ -360,11 +366,13 @@ body {
     justify-content: center;
     align-items: center;
 }
-.botoes-finais  button {
+
+.botoes-finais button {
     font-size: 18px;
     line-height: 21px;
     border: none;
 }
+
 .botoes-finais .reiniciar-quizz {
     background-color: #EC362D;
     border-radius: 15px;
@@ -372,15 +380,18 @@ body {
     height: 44px;
     margin-bottom: 8px;
 }
+
 .botoes-finais .reiniciar-quizz p {
     color: #FFFFFF;
     text-align: center;
 }
+
 .botoes-finais .voltar-home {
     color: #818181;
     background-color: #FFFFFF;
     margin-bottom: 66px;
 }
+
 /*                               Layout(Mobile) - Tela 2                                      */
 
 /* ----------------------------Layout Mobile (Tela 3.1)--------------------------------- */
@@ -433,14 +444,17 @@ body {
     justify-content: space-around;
     align-items: center;
     background: #FFFFFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
 }
 
 .main-tela3-1 .criarQuizInfoBasica input {
     width: 341px;
     height: 46px;
+    padding-left: 14px;
+    padding-right: 14px;
+    margin: 0 auto;
     background: #FFFFFF;
     border: 1px solid #D1D1D1;
-    box-sizing: border-box;
     border-radius: 5px;
     font-size: 19px;
     line-height: 22px;
@@ -462,10 +476,11 @@ body {
     font-style: italic;
 }
 
-/*Botão para enviar informações básicas para criação do quizz)*/
+/*Botão para enviar informações básicas para criação do quizz*/
 .main-tela3-1 .botaoCriarQuizInfoBasica {
     width: 100%;
     margin-top: 29px;
+    margin-bottom: 170px;
     display: flex;
     justify-content: center;
 }
@@ -485,6 +500,305 @@ body {
 
 /* ----------------------------Layout Mobile (Tela 3.1)--------------------------------- */
 
+
+/* ----------------------------Layout Mobile (Tela 3.2)--------------------------------- */
+
+/*Parte superior (título da página)*/
+.header-tela3-2 {
+    height: 69px;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: #EC362D;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    z-index: 8;
+    display: none;
+}
+
+.header-tela3-2 h1 {
+    margin-top: 13px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 37px;
+    line-height: 43px;
+    text-align: center;
+    align-items: center;
+    color: #FFFFFF;
+}
+
+/*Conteúdo principal (perguntas para criação do quizz)*/
+.main-tela3-2 {
+    width: 100%;
+    margin: 106px auto 0;
+    display: none;
+}
+
+.main-tela3-2 h3 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    margin-top: 108px;
+    margin-bottom: 20px;
+}
+
+.main-tela3-2 .criarQuizPerguntas {
+    width: 375px;
+    height: 825px;
+    margin: 29px auto 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+}
+
+.main-tela3-2 .criarQuizPerguntas h4 {
+    margin: 0px 0 0 17px;
+    text-align: left;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 23px;
+    color: #000000;
+}
+
+.main-tela3-2 .criarQuizPerguntas input {
+    padding-left: 14px;
+    padding-right: 14px;
+    margin: 0 auto;
+    width: 341px;
+    height: 46px;
+    background: #FFFFFF;
+    border: 1px solid #D1D1D1;
+    border-radius: 5px;
+    font-size: 19px;
+    line-height: 22px;
+}
+
+.main-tela3-2 .criarQuizPerguntas .input-espaco {
+    margin-bottom: 18px;
+}
+
+.main-tela3-2 .criarQuizPerguntas input::placeholder {
+    opacity: 1;
+    color: #BABABA;
+    font-style: italic;
+}
+
+.main-tela3-2 .criarQuizPerguntas input::-ms-input-placeholder {
+    color: #BABABA;
+    font-style: italic;
+}
+
+.main-tela3-2 .criarQuizPerguntas input::-ms-input-placeholder {
+    color: #BABABA;
+    font-style: italic;
+}
+
+/*Parte que dá acesso ao segundo e terceiro blocos de perguntas (editar)*/
+.main-tela3-2 .criarQuizPerguntas-CaixaPergunta {
+    width: 100%;
+    height: 74px;
+    margin-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+    display: none;
+
+}
+
+.main-tela3-2 .criarQuizPerguntas-CaixaPergunta h4 {
+    margin-left: 17px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 23px;
+}
+
+.main-tela3-2 .criarQuizPerguntas-CaixaPergunta img {
+    margin-right: 25px;
+}
+
+/*Botão para enviar perguntas para criação do quizz*/
+.main-tela3-2 .botaoCriarPerguntas {
+    width: 100%;
+    margin-top: 46px;
+    margin-bottom: 61px;
+    display: flex;
+    justify-content: center;
+}
+
+.main-tela3-2 .botaoCriarPerguntas button {
+    width: 324px;
+    height: 54px;
+    background: #EC362D;
+    border: none;
+    border-radius: 15px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFF5F4;
+}
+
+/* ----------------------------Layout Mobile (Tela 3.2)--------------------------------- */
+
+/* ----------------------------Layout Mobile (Tela 3.3)--------------------------------- */
+
+/*Parte superior (título da página)*/
+.header-tela3-3 {
+    height: 69px;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: #EC362D;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    z-index: 8;
+    display: none;
+}
+
+.header-tela3-3 h1 {
+    margin-top: 13px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 37px;
+    line-height: 43px;
+    text-align: center;
+    align-items: center;
+    color: #FFFFFF;
+}
+
+/*Conteúdo principal (níveis para criação do quizz)*/
+.main-tela3-3 {
+    width: 100%;
+    margin: 106px auto 0;
+    display: none;
+}
+
+.main-tela3-3 h3 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+}
+
+.main-tela3-3 .criarQuizNiveis {
+    width: 375px;
+    height: 439px;
+    margin: 29px auto 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+}
+
+.main-tela3-3 .criarQuizNiveis h4 {
+    margin: 0px 0 0 17px;
+    text-align: left;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 23px;
+    color: #000000;
+}
+
+.main-tela3-3 .criarQuizNiveis input, textarea{
+    padding-left: 14px;
+    padding-right: 14px;
+    margin: 0 auto;
+    width: 341px;
+    height: 46px;
+    background: #FFFFFF;
+    border: 1px solid #D1D1D1;
+    border-radius: 5px;
+    font-size: 19px;
+    line-height: 22px;
+}
+
+.main-tela3-3 .criarQuizNiveis textarea {
+    width: 341px;
+    height: 177px;
+    padding-top: 13px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 19px;
+    line-height: 22px;
+}
+
+.main-tela3-3 .criarQuizNiveis input::placeholder, textarea::placeholder {
+    opacity: 1;
+    color: #BABABA;
+    font-style: italic;
+}
+
+.main-tela3-3 .criarQuizNiveis input::-ms-input-placeholder, textarea::placeholder {
+    color: #BABABA;
+    font-style: italic;
+}
+
+.main-tela3-3 .criarQuizNiveis input::-ms-input-placeholder, textarea::placeholder {
+    color: #BABABA;
+    font-style: italic;
+}
+
+/*Parte que dá acesso ao segundo e terceiro blocos de níveis (editar)*/
+.main-tela3-3 .criarQuizNiveis-CaixaNiveis {
+    width: 100%;
+    height: 74px;
+    margin-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+    display: none;
+
+}
+
+.main-tela3-3 .criarQuizNiveis-CaixaNiveis h4 {
+    margin-left: 17px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 23px;
+}
+
+.main-tela3-3 .criarQuizNiveis-CaixaNiveis img {
+    margin-right: 25px;
+}
+
+/*Botão para enviar níveis para criação do quizz*/
+.main-tela3-3 .botaoCriarNiveis {
+    width: 100%;
+    margin-top: 28px;
+    margin-bottom: 136px;
+    display: flex;
+    justify-content: center;
+}
+
+.main-tela3-3 .botaoCriarNiveis button {
+    width: 324px;
+    height: 54px;
+    background: #EC362D;
+    border: none;
+    border-radius: 15px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFF5F4;
+}
+
+/* ----------------------------Layout Mobile (Tela 3.3)--------------------------------- */
+
+
 /* ----------------------------Layout Mobile (Tela 3.4)--------------------------------- */
 
 /* Barra fixa do topo */
@@ -499,8 +813,9 @@ body {
     padding-top: 15px;
     z-index: 8;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    /* display: none; */
+    display: none;
 }
+
 /* Título da barra fixa */
 .header-tela3-4 h1 {
     color: #FFF;
@@ -517,15 +832,14 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    display: none;
 }
 .main-tela3-4 h3 {
-    font-style: normal;
+    margin-top: 108px;
     font-weight: bold;
     font-size: 20px;
     line-height: 23px;
-    text-align: center;
-    margin-top: 108px;
-    margin-bottom: 20px;
+    margin-bottom: 29px;
 }
 
 /* configurações da imagem */
@@ -576,3 +890,6 @@ body {
 }
 
 /* ----------------------------Layout Mobile (Tela 3.4)--------------------------------- */
+
+
+
