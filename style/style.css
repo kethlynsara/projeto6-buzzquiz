@@ -9,6 +9,9 @@ body {
     margin: 0;
     padding: 0;
 }
+/* .escondido {
+    display: none;
+} */
 
 /* ----------------------------Layout Mobile (Tela 1)--------------------------------- */
 
@@ -170,7 +173,7 @@ body {
 /* ----------------------------Layout Mobile (Tela 1)--------------------------------- */
 
 
-/*                               Layout(Mobile) - Tela 2                                      */
+/*----------------------------Layout(Mobile) - Tela 2----------------------------------*/
 
 /* barra fixa do topo */
 .header-tela2 {
@@ -220,7 +223,7 @@ body {
 
 .tela2 {
     display: none;
-}
+} 
 
 .box-respostas-impar, .box-respostas-par {
     /*divs com a pergunta e as opções de resposta do quizz*/
@@ -500,6 +503,7 @@ body {
 
 /* ----------------------------Layout Mobile (Tela 3.1)--------------------------------- */
 
+
 /* ----------------------------Layout Mobile (Tela 3.2)--------------------------------- */
 
 /*Parte superior (título da página)*/
@@ -539,6 +543,8 @@ body {
     font-size: 20px;
     line-height: 23px;
     text-align: center;
+    margin-top: 108px;
+    margin-bottom: 20px;
 }
 
 .main-tela3-2 .criarQuizPerguntas {
@@ -755,7 +761,7 @@ body {
     align-items: center;
     background: #FFFFFF;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
-    display: none;
+    /* display: none; */
 
 }
 
@@ -794,3 +800,99 @@ body {
 }
 
 /* ----------------------------Layout Mobile (Tela 3.3)--------------------------------- */
+
+
+/* ----------------------------Layout Mobile (Tela 3.4)--------------------------------- */
+
+/* Barra fixa do topo */
+.header-tela3-4 {
+    height: 69px;
+    width: 100%;
+    background-color: #EC362D;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding-top: 15px;
+    z-index: 8;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    display: none;
+}
+
+/* Título da barra fixa */
+.header-tela3-4 h1 {
+    color: #FFF;
+    font-weight: 700;
+    font-size: 37px;
+    line-height: 43.36px;
+    text-align: center;
+}
+
+/* conteúdo principal da página */
+.main-tela3-4 {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+.main-tela3-4 h3 {
+    margin-top: 108px;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 23px;
+    margin-bottom: 29px;
+}
+
+/* configurações da imagem */
+.main-tela3-4 .elementos3-4 {
+    width: 340px;
+    height: 181px;
+    border-radius: 5px;
+    position: relative;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 65.62%, rgba(0, 0, 0, 0.8) 100%), url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT81Et61bNY27A_vDkhi6K_SK0ueY_JEVU6xA&usqp=CAU);
+
+}
+
+/* configurações do texto que descreve a imagem */
+.main-tela3-4 a {
+    position: absolute;
+    text-decoration: none;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 19px;
+    line-height: 22px;
+    color: #FFFFFF;
+    z-index: 5;
+    top: 100px;
+    left: 35px;
+    top: 293px;
+}
+
+/* configurações dos botões do final da página */
+.main-tela3-4 button {
+    border: none;
+}
+.main-tela3-4 .botao-acessar-quizz {
+    background-color: #EC362D;
+    border-radius: 15px;
+    width: 220.32px;
+    height: 44px;
+    margin-bottom: 8px;
+    margin-top: 24px;
+}
+.main-tela3-4 .botao-acessar-quizz p {
+    color: #FFFFFF;
+    text-align: center;
+}
+.main-tela3-4 .voltar-home-3-4 {
+    color: #818181;
+    background-color: #FFFFFF;
+    margin-top: 15px;
+}
+
+/* ----------------------------Layout Mobile (Tela 3.4)--------------------------------- */
+
+
+
