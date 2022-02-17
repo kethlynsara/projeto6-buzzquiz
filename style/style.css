@@ -9,6 +9,9 @@ body {
     margin: 0;
     padding: 0;
 }
+/* .escondido {
+    display: none;
+} */
 
 /* ----------------------------Layout Mobile (Tela 1)--------------------------------- */
 
@@ -170,7 +173,7 @@ body {
 /* ----------------------------Layout Mobile (Tela 1)--------------------------------- */
 
 
-/*                               Layout(Mobile) - Tela 2                                      */
+/*----------------------------Layout(Mobile) - Tela 2----------------------------------*/
 
 /* barra fixa do topo */
 .header-tela2 {
@@ -220,7 +223,7 @@ body {
 
 .tela2 {
     display: none;
-}
+} 
 
 .box-respostas-impar, .box-respostas-par {
     /*divs com a pergunta e as opções de resposta do quizz*/
@@ -758,7 +761,7 @@ body {
     align-items: center;
     background: #FFFFFF;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
-    display: none;
+    /* display: none; */
 
 }
 
