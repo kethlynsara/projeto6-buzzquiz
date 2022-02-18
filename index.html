@@ -36,7 +36,7 @@
     <main class="main-tela1">
 
         <!--Espaço que redireciona para a parte de criar um quiz-->
-        <nav class="nav-tela1">
+        <nav class="nav-tela1" onclick="aparecerTelaCriarQuizzes()">
             <p>Você não criou nenhum <br> quizz ainda :(</p>
             <button>Criar Quizz</button>
         </nav>
@@ -167,23 +167,23 @@
     <!-- ----------------------------Layout Mobile (Tela 3.1)--------------------------------- -->
 
     <!--Topo da página (título)-->
-    <header class="header-tela3-1">
+    <header class="header-tela3-1 escondido">
         <h1>BuzzQuizz</h1>
     </header>
 
     <!--Conteúdo principal (Criar Quizz - Informações Básicas a serem fornecidas)-->
-    <main class="main-tela3-1">
+    <main class="main-tela3-1 escondido">
         <h3>Comece pelo começo</h3>
 
         <div class="criarQuizInfoBasica">
-            <input type="text" placeholder="Título do seu quizz">
-            <input type="text" placeholder="URL da imagem do seu quizz">
-            <input type="text" placeholder="Quantidade de perguntas do quizz">
-            <input type="text" placeholder="Quantidade de níveis do quizz">
+            <input class= "tituloQuiz" type="text" placeholder="Título do seu quizz" minlength="20" maxlength="60" />
+            <input class= "imagemQuiz" type="text" placeholder="URL da imagem do seu quizz" />
+            <input class= "perguntasQuiz" type="text" placeholder="Quantidade de perguntas do quizz" />
+            <input class= "niveisQuiz" type="text" placeholder="Quantidade de níveis do quizz" />
         </div>
 
         <div class="botaoCriarQuizInfoBasica">
-            <button>Prosseguir pra criar perguntas</button>
+            <button type="submit" onclick="criarPerguntas()">Prosseguir pra criar perguntas</button>
         </div>
     </main>
 
@@ -192,12 +192,12 @@
     <!-- ----------------------------Layout Mobile (Tela 3.2)--------------------------------- -->
 
     <!--Topo da página (título)-->
-    <header class="header-tela3-2">
+    <header class="header-tela3-2 escondido">
         <h1>BuzzQuizz</h1>
     </header>
 
     <!--Conteúdo principal (Criar Quizz - Perguntas do Quizz)-->
-    <main class="main-tela3-2">
+    <main class="main-tela3-2 escondido">
         <h3>Crie suas perguntas</h3>
 
         <!--Parte 1 das perguntas-->

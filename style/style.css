@@ -38,7 +38,7 @@ a:hover {
     background-color: #EC362D;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     z-index: 8;
-
+    display: none;
 }
 
 .header-tela1 h1 {
@@ -58,6 +58,7 @@ a:hover {
     font-family: 'Roboto', sans-serif;
     width: 100%;
     margin: 100px auto 0;
+    display: none;
 }
 
 /*Configurações para a área de navegação que redireciona para a parte de criar um quiz*/
@@ -159,7 +160,6 @@ a:hover {
 .main-tela1 .quizzesCriadosUsuario .topo-quizzesCriadosUsuario #iconCriarQuiz {
     font-size: 30px;
     color: #EC362D;
-    display: none;
 }
 
 /*Configurações padrões que servem apenas para a parte de "Seus Quizzes"*/
@@ -202,6 +202,7 @@ a:hover {
 
 /* barra fixa do topo */
 .header-tela2 {
+    font-family: 'Roboto', sans-serif;
     height: 69px;
     width: 100%;
     background-color: #EC362D;
@@ -245,6 +246,11 @@ a:hover {
 }
 
 /* main tela 2*/
+
+
+.tela2 {
+    font-family: 'Roboto', sans-serif;
+}
 
 .box-respostas-impar, .box-respostas-par {
     /*divs com a pergunta e as opções de resposta do quizz*/
@@ -421,6 +427,7 @@ a:hover {
 
 /*Parte superior (título da página)*/
 .header-tela3-1 {
+    font-family: 'Roboto', sans-serif;
     height: 69px;
     width: 100%;
     position: fixed;
@@ -429,7 +436,6 @@ a:hover {
     background-color: #EC362D;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     z-index: 8;
-    display: none;
 }
 
 .header-tela3-1 h1 {
@@ -445,9 +451,9 @@ a:hover {
 
 /*Conteúdo principal (informações básicas para criação do quizz)*/
 .main-tela3-1 {
+    font-family: 'Roboto', sans-serif;
     width: 100%;
     margin: 106px auto 0;
-    display: none;
 }
 
 .main-tela3-1 h3 {
@@ -528,6 +534,7 @@ a:hover {
 
 /*Parte superior (título da página)*/
 .header-tela3-2 {
+    font-family: 'Roboto', sans-serif;
     height: 69px;
     width: 100%;
     position: fixed;
@@ -536,7 +543,6 @@ a:hover {
     background-color: #EC362D;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     z-index: 8;
-    display: none;
 }
 
 .header-tela3-2 h1 {
@@ -552,9 +558,9 @@ a:hover {
 
 /*Conteúdo principal (perguntas para criação do quizz)*/
 .main-tela3-2 {
+    font-family: 'Roboto', sans-serif;
     width: 100%;
     margin: 106px auto 0;
-    display: none;
 }
 
 .main-tela3-2 h3 {
@@ -675,6 +681,7 @@ a:hover {
 
 /*Parte superior (título da página)*/
 .header-tela3-3 {
+    font-family: 'Roboto', sans-serif;
     height: 69px;
     width: 100%;
     position: fixed;
@@ -699,6 +706,7 @@ a:hover {
 
 /*Conteúdo principal (níveis para criação do quizz)*/
 .main-tela3-3 {
+    font-family: 'Roboto', sans-serif;
     width: 100%;
     margin: 106px auto 0;
     display: none;
@@ -826,6 +834,7 @@ a:hover {
 
 /* Barra fixa do topo */
 .header-tela3-4 {
+    font-family: 'Roboto', sans-serif;
     height: 69px;
     width: 100%;
     background-color: #EC362D;
