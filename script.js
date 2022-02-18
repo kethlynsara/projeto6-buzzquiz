@@ -2,7 +2,6 @@
 const BUZZQUIZZAPI = "https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes";
 
 
-
 /* -------------------------------------------- Layout Mobile (Tela 1) ----------------------------------------------- */
 // Requisição de todos os quizzes 
 function buscarQuizzes() {
@@ -58,16 +57,31 @@ function exibirQuizzes(resposta) {
     quizzes.forEach(quizz => {
         if (validarUrl(quizz.image) === true) {
       div.innerHTML += `
-        <div class="quizzesCriadosPorTodos-Imagens">
+        <div class="quizzesCriadosPorTodos-Imagens" onclick="aparecerTela2(this)">
           <img src="${quizz.image}" />
           <p>${quizz.title}</p>
         </div>
       `;
         }
     });
-
-    }
-
+}
 buscarQuizzes();
 
 /* -------------------------------------------- Layout Mobile (Tela 1) ----------------------------------------------- */
+
+/* -------------------------------------------- Layout Mobile (Tela 1) ----------------------------------------------- */
+
+function aparecerTela2(quizzSelecionado) {
+    console.log("executou");
+    const headerTela1 = document.querySelector(".header-tela1");
+    const mainTela1 = document.querySelector(".main-tela1");
+    const headerTela2 = document.querySelector(".header-tela2");
+    const mainTela2 = document.querySelector(".tela2");
+    //const telaFinalQuizz = document.querySelector("footer");
+    headerTela1.classList.add("escondido");
+    mainTela1.classList.add("escondido");
+    headerTela2.classList.remove("escondido");
+    mainTela2.classList.remove("escondido");
+    // telaFinalQuizz.classList.add("escondido");
+}
+
