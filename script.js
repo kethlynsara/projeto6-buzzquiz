@@ -1,7 +1,8 @@
 /* -------------------------------------------- variáveis de controle ------------------------------------------------ */
 const BUZZQUIZZAPI = "https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes";
-
-
+let titulo = document.querySelector(".tituloQuiz").value;
+let imagem = document.querySelector(".criarQuizInfoBasica .imagemQuiz").value;
+let inputLength;
 
 /* -------------------------------------------- Layout Mobile (Tela 1) ----------------------------------------------- */
 // Requisição de todos os quizzes 
@@ -24,12 +25,23 @@ function exibirErro(erro) {
 
 // Validação de URL
 function validarUrl(url) {
-    const validacaoURL = /^(?:(?:https?|ftp):\/\/)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?(?:\/\S*)?$/;
-    if (validacaoURL.test(url)) {
+
+    const validacaoURL = new RegExp('^(https?:\\/\\/)?' +
+        '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.?)+[a-z]{2,}|' +
+        '((\\d{1,3}\\.){3}\\d{1,3}))' +
+        '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' +
+        '(\\?[;&a-z\\d%_.~+=-]*)?' +
+        '(\\#[-a-z\\d_]*)?$', 'i');
+
+    if (!!validacaoURL.test(url)) {
+
         return true;
+
     } else {
+
         return false;
     }
+
 }
 
 // Função que faz exibir todos os quizzes na tela
@@ -41,7 +53,7 @@ function exibirQuizzes(resposta) {
     <div class="quizzesCriadosUsuario">
         <div class="topo-quizzesCriadosUsuario">
             <h3>Seus Quizzes</h3>
-            <ion-icon id="iconCriarQuiz" name="add-circle"></ion-icon>
+            <ion-icon id="iconCriarQuiz" onclick="aparecerTelaCriarQuizzes()" name="add-circle"></ion-icon>
         </div>
             <img src="https://criticalhits.com.br/wp-content/uploads/2020/12/J.-K.-Rowling-lancara-quatro-novos-livros-da-saga-Harry-Potter.jpg"
         alt="Harry Potter">
@@ -54,10 +66,10 @@ function exibirQuizzes(resposta) {
 
     const div = document.querySelector(".quizzesCriadosPorTodos");
     const quizzes = resposta.data;
-    
+
     quizzes.forEach(quizz => {
         if (validarUrl(quizz.image) === true) {
-      div.innerHTML += `
+            div.innerHTML += `
         <div class="quizzesCriadosPorTodos-Imagens">
           <img src="${quizz.image}" />
           <p>${quizz.title}</p>
@@ -66,8 +78,74 @@ function exibirQuizzes(resposta) {
         }
     });
 
-    }
+}
 
 buscarQuizzes();
 
+function aparecerTelaCriarQuizzes() {
+    let desaparecerTelaSuperior = document.querySelector(".header-tela1");
+    desaparecerTelaSuperior.classList.add("escondido");
+
+    let desaparecerTelaMeio = document.querySelector(".main-tela1");
+    desaparecerTelaMeio.classList.add("escondido");
+
+    let aparecerTelaSuperior = document.querySelector(".header-tela3-1");
+    aparecerTelaSuperior.classList.remove("escondido");
+
+    let aparecerTelaMeio = document.querySelector(".main-tela3-1");
+    aparecerTelaMeio.classList.remove("escondido");
+}
+
 /* -------------------------------------------- Layout Mobile (Tela 1) ----------------------------------------------- */
+
+/* -------------------------------------------- Layout Mobile (Tela 3.1) --------------------------------------------- */
+
+// Função que conta a quantidade de caracteres digitada 
+let contadorCaracteres = document.querySelector(".tituloQuiz");
+
+contadorCaracteres.addEventListener("keypress", function (caracteres) {
+    inputLength = contadorCaracteres.value.length;
+
+});
+
+// Validação das informações digitadas em cada input
+function criarPerguntas() {
+
+    let perguntas = null;
+    let niveis = null;
+
+    let tituloCaracteres = document.querySelector(".tituloQuiz").value;
+    let validacaoURL = document.querySelector(".criarQuizInfoBasica .imagemQuiz").value;
+    perguntas = parseInt(document.querySelector(".criarQuizInfoBasica .perguntasQuiz").value);
+    niveis = parseInt(document.querySelector(".criarQuizInfoBasica .niveisQuiz").value);
+
+    let countCaracteres = tituloCaracteres.length;
+
+
+    if (((inputLength >= 20 && inputLength <= 65) || countCaracteres >= 20 || contadorCaracteres <= 65) && (perguntas === 3) && (niveis === 2 || niveis === 3) && (validarUrl(validacaoURL))) {
+
+        aparecerSegundaTela();
+
+    }
+
+}
+
+// Aparecimento da tela seguinte para criação do quizz
+function aparecerSegundaTela() {
+
+
+    let desaparecerTelaSuperior = document.querySelector(".header-tela3-1");
+    desaparecerTelaSuperior.classList.add("escondido");
+
+    let desaparecerTelaMeio = document.querySelector(".main-tela3-1");
+    desaparecerTelaMeio.classList.add("escondido");
+
+    let aparecerTelaSuperior = document.querySelector(".header-tela3-2");
+    aparecerTelaSuperior.classList.remove("escondido");
+
+    let aparecerTelaMeio = document.querySelector(".main-tela3-2");
+    aparecerTelaMeio.classList.remove("escondido");
+
+}
+
+/* -------------------------------------------- Layout Mobile (Tela 3.1) --------------------------------------------- */
