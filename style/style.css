@@ -1,4 +1,191 @@
-/*Especificações gerais*/
+@media (min-width: 1100px) {
+
+    .tela2 .quizz-header {
+        margin-top: 68px;
+        margin-bottom: 24px;
+        width: 100%;
+        height: 227px;
+    }
+
+    .tela2 .quizz-header p {
+        font-size: 39px;
+        line-height: 45.7px;
+        top: 155px;
+        left: 300px;
+    }
+
+    .tela2 .box-respostas-impar {
+        width: 759px;
+        height: 676px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .tela2 .box-respostas-impar .pergunta {
+        width: 688.16px;
+        height: 137.99px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .tela2 .box-respostas-impar .respostas p {
+        font-size: 20px;
+        line-height: 23px;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .tela2 .box-respostas-impar .respostas {
+        width: 688.16px;
+        height: 490px;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .tela2 .box-respostas-impar .respostas p {
+        font-size: 20px;
+        line-height: 23px;
+    }
+
+    .tela2 .box-respostas-impar .opcao img {
+        margin: 0;
+        padding: 0;
+        width: 329.91px;
+        height: 175.2px;
+    }
+
+    .tela2 .box-respostas-impar .opcao {
+        width: 329.91px;
+        height: 185px;
+    }
+
+    .tela2 .box-respostas-par {
+        width: 759px;
+        height: 676px;
+        margin: 42px auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .tela2 .box-respostas-par .pergunta {
+        width: 688.16px;
+        height: 137.99px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .tela2 .box-respostas-par .respostas {
+        width: 688.16px;
+        height: 490px;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .tela2 .box-respostas-par .respostas p {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        font-size: 20px;
+        line-height: 23px;
+    }
+
+    .tela2 .box-respostas-par .opcao img {
+        margin: 0;
+        padding: 0;
+        width: 329.91px;
+        height: 175.2px;
+    }
+
+    .tela2 .box-respostas-par .opcao {
+        width: 329.91px;
+        height: 185px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .tela-final-quizz {
+        width: 759px;
+        height: 430px;
+        margin: auto;
+    }
+
+    .tela-final-quizz .porcentagem-final {
+        width: 727px;
+        height: 99px;
+    }
+
+    .tela-final-quizz .resultado-quizz-juncao {
+        margin-top: 5px;
+        display: flex;
+    }
+
+    .tela-final-quizz .resultado-quizz-juncao img {
+        margin-right: 21px;
+    }
+
+    .tela-final-quizz .resultado-quizz-juncao p {
+        font-weight: bold;
+        font-size: 19px;
+        line-height: 25px;
+        word-wrap: break-word;
+        text-align: left;
+    }
+
+    .main-tela3-1 .criarQuizInfoBasica {
+        width: 600px;
+    }
+
+    .main-tela3-1 .criarQuizInfoBasica input {
+        width: 900px;
+
+    }
+
+    .main-tela3-2 .criarQuizPerguntas-CaixaPergunta {
+
+        width: 600px;
+    }
+
+    .main-tela1 .nav-tela1 {
+        width: 1051px;
+        height: 181px;
+    }
+
+    .main-tela1 .nav-tela1 button {
+        margin-left: 451px;
+    }
+
+    .main-tela3-2 .criarQuizPerguntas {
+        width: 600px;
+
+    }
+
+    .main-tela1 .quizzesCriadosPorTodos {
+        flex-direction: row;
+        display: flex;
+        flex-wrap: wrap;
+        width: 1051px;
+        margin: 0 auto;
+      
+    }
+
+
+}
+
 body {
     background-color: #FAFAFA;
     font-family: 'Roboto', sans-serif;
@@ -24,11 +211,8 @@ a:hover {
 
 .escondido {
     display: none;
-} 
+}
 
-/* ----------------------------Layout Mobile (Tela 1)--------------------------------- */
-
-/*Parte superior (título da página)*/
 .header-tela1 {
     height: 69px;
     width: 100%;
@@ -38,7 +222,6 @@ a:hover {
     background-color: #EC362D;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     z-index: 8;
-    display: none;
 }
 
 .header-tela1 h1 {
@@ -53,15 +236,12 @@ a:hover {
     color: #FFFFFF;
 }
 
-/*Configurações do layout para listagem do conteúdo principal*/
 .main-tela1 {
     font-family: 'Roboto', sans-serif;
     width: 100%;
     margin: 100px auto 0;
-    display: none;
 }
 
-/*Configurações para a área de navegação que redireciona para a parte de criar um quiz*/
 .nav-tela1 {
     width: 340px;
     height: 181px;
@@ -98,12 +278,10 @@ a:hover {
     color: #EC362D;
 }
 
-/*Configurações apenas para "Todos os Quizzes"*/
 .main-tela1 .quizzesCriadosPorTodos {
     padding-top: 25px;
 }
 
-/*Configurações apenas a div, com a imagem e link (Todos os Quizzes)*/
 .main-tela1 .quizzesCriadosPorTodos-Imagens {
     width: 340px;
     height: 181px;
@@ -133,8 +311,16 @@ a:hover {
     color: #FFFFFF;
 }
 
-/*Configurações padrões que servem tanto para os elementos dentro de "Seus Quizzes", quanto para "Todos os Quizzes"*/
-.main-tela1 .quizzesCriadosUsuario, .quizzesCriadosPorTodos {
+.main-tela1 .quizzesCriadosUsuario {
+    width: 340px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+.main-tela1 .quizzesCriadosPorTodos {
     width: 340px;
     margin: 0 auto;
     display: flex;
@@ -151,7 +337,6 @@ a:hover {
     color: #000000;
 }
 
-/*Configurações apenas para a parte inicial dos "Seus Quizzes", abragendo o h3 e o icon */
 .main-tela1 .quizzesCriadosUsuario .topo-quizzesCriadosUsuario {
     display: flex;
     justify-content: space-between;
@@ -162,7 +347,6 @@ a:hover {
     color: #EC362D;
 }
 
-/*Configurações padrões que servem apenas para a parte de "Seus Quizzes"*/
 .main-tela1 .quizzesCriadosUsuario img {
     margin-bottom: 13px;
     width: 340px;
@@ -193,14 +377,10 @@ a:hover {
     margin-bottom: 16px;
 }
 
+.main-tela1 .quizzesCriadosPorTodos h3 {
+    margin-bottom: 16px;
+}
 
-
-/* ----------------------------Layout Mobile (Tela 1)--------------------------------- */
-
-
-/*----------------------------Layout(Mobile) - Tela 2----------------------------------*/
-
-/* barra fixa do topo */
 .header-tela2 {
     font-family: 'Roboto', sans-serif;
     height: 69px;
@@ -224,14 +404,12 @@ a:hover {
 }
 
 
-/*título do quizz e imagem com opacidade escura */
 .quizz-header {
     margin-top: 53px;
     margin-bottom: 24px;
     width: 100%;
     height: 142px;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(https://www.animalepetshop.com.br/wp-content/uploads/2021/11/Spitz-Lula-Da-Pomernia-Creme-Perola-Fortaleza-Animale-Petshop.jpg);
-    /* imagem do quizz com opacidade preta 60% */
 }
 
 .quizz-header p {
@@ -241,19 +419,15 @@ a:hover {
     position: absolute;
     text-align: center;
     z-index: 5;
-    top: 130px;
+    top: 120px;
     left: 70px;
 }
-
-/* main tela 2*/
-
 
 .tela2 {
     font-family: 'Roboto', sans-serif;
 }
 
 .box-respostas-impar, .box-respostas-par {
-    /*divs com a pergunta e as opções de resposta do quizz*/
     background-color: #FFF;
     margin-bottom: 28px;
     padding: 18px;
@@ -275,10 +449,9 @@ a:hover {
 .pergunta {
     width: 100%;
     height: 89px;
-    padding-top: 20px;
-    padding-bottom: 15px;
-    padding-left: 16px;
-    padding-right: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .pergunta p {
@@ -290,14 +463,12 @@ a:hover {
 }
 
 .respostas {
-    /*div que contém todas as opções de respostas*/
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
 .resposta {
-    /*div que contém a imagem e o p (descrição da imagem)*/
     margin-top: 12px;
     margin-bottom: 12px;
 }
@@ -311,7 +482,6 @@ a:hover {
 }
 
 .opcao {
-    /*div que contém só a imagem*/
     width: 163px;
     height: 133px;
 }
@@ -321,7 +491,6 @@ a:hover {
     height: 133px;
 }
 
-/* configurações de respostas certas e erradas */
 .resposta-certa {
     color: #009C22;
 }
@@ -330,13 +499,11 @@ a:hover {
     color: #FF0B0B;
 }
 
-/* efeito-opacidade */
 .box-respostas-impar .opacidade {
     background: url(../images/image\ 3.png);
     opacity: 0.3;
 }
 
-/* Tela final - resultado do quizz  */
 .resultado-quizz {
     background-color: #FFFFFF;
     padding: 18px;
@@ -351,10 +518,10 @@ a:hover {
     background-color: #EC362D;
     width: 100%;
     height: 99px;
-    padding-top: 22px;
-    padding-left: 16px;
-    padding-right: 16px;
     margin-bottom: 9px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .resultado-quizz .porcentagem-final p {
@@ -363,6 +530,7 @@ a:hover {
     font-size: 19px;
     line-height: 22px;
     text-align: center;
+    font-family: 'Roboto', sans-serif;
 }
 
 .resultado-quizz .meme-final {
@@ -386,9 +554,9 @@ a:hover {
     line-height: 20px;
     color: #484848;
     margin-bottom: 14px;
+    font-family: 'Roboto', sans-serif;
 }
 
-/* botoes de reiniciar o quizz e voltar para home */
 .botoes-finais {
     display: flex;
     flex-direction: column;
@@ -407,7 +575,7 @@ a:hover {
     border-radius: 15px;
     width: 220.32px;
     height: 44px;
-    margin-bottom: 8px;
+    margin-bottom: 25px;
 }
 
 .botoes-finais .reiniciar-quizz p {
@@ -421,11 +589,6 @@ a:hover {
     margin-bottom: 66px;
 }
 
-/*                               Layout(Mobile) - Tela 2                                      */
-
-/* ----------------------------Layout Mobile (Tela 3.1)--------------------------------- */
-
-/*Parte superior (título da página)*/
 .header-tela3-1 {
     font-family: 'Roboto', sans-serif;
     height: 69px;
@@ -449,7 +612,6 @@ a:hover {
     color: #FFFFFF;
 }
 
-/*Conteúdo principal (informações básicas para criação do quizz)*/
 .main-tela3-1 {
     font-family: 'Roboto', sans-serif;
     width: 100%;
@@ -465,7 +627,7 @@ a:hover {
 }
 
 .main-tela3-1 .criarQuizInfoBasica {
-    width: 100%;
+    width: 375px;
     height: 256px;
     margin: 29px auto 0;
     display: flex;
@@ -505,7 +667,6 @@ a:hover {
     font-style: italic;
 }
 
-/*Botão para enviar informações básicas para criação do quizz*/
 .main-tela3-1 .botaoCriarQuizInfoBasica {
     width: 100%;
     margin-top: 29px;
@@ -527,12 +688,6 @@ a:hover {
     color: #FFF5F4;
 }
 
-/* ----------------------------Layout Mobile (Tela 3.1)--------------------------------- */
-
-
-/* ----------------------------Layout Mobile (Tela 3.2)--------------------------------- */
-
-/*Parte superior (título da página)*/
 .header-tela3-2 {
     font-family: 'Roboto', sans-serif;
     height: 69px;
@@ -556,7 +711,6 @@ a:hover {
     color: #FFFFFF;
 }
 
-/*Conteúdo principal (perguntas para criação do quizz)*/
 .main-tela3-2 {
     font-family: 'Roboto', sans-serif;
     width: 100%;
@@ -576,12 +730,11 @@ a:hover {
 .main-tela3-2 .criarQuizPerguntas {
     width: 375px;
     height: 825px;
-    margin: 29px auto 0;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     background: #FFFFFF;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
 }
 
 .main-tela3-2 .criarQuizPerguntas h4 {
@@ -611,34 +764,36 @@ a:hover {
     margin-bottom: 18px;
 }
 
-.main-tela3-2 .criarQuizPerguntas input::placeholder {
+.main-tela3-2 .criarQuizPerguntas input::placeholder, .footer-tela3-2 .criarQuizPerguntas input::placeholder {
     opacity: 1;
     color: #BABABA;
     font-style: italic;
 }
 
-.main-tela3-2 .criarQuizPerguntas input::-ms-input-placeholder {
+.main-tela3-2 .criarQuizPerguntas input::-ms-input-placeholder, .footer-tela3-2 .criarQuizPerguntas input::-ms-input-placeholder {
     color: #BABABA;
     font-style: italic;
 }
 
-.main-tela3-2 .criarQuizPerguntas input::-ms-input-placeholder {
+.main-tela3-2 .criarQuizPerguntas input::-ms-input-placeholder, .footer-tela3-2 .criarQuizPerguntas input::-ms-input-placeholder {
     color: #BABABA;
     font-style: italic;
 }
 
-/*Parte que dá acesso ao segundo e terceiro blocos de perguntas (editar)*/
+.criarQuizPerguntas.escondido {
+    display: none;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+}
+
 .main-tela3-2 .criarQuizPerguntas-CaixaPergunta {
-    width: 100%;
+    width: 375px;
     height: 74px;
-    margin-top: 24px;
+    margin: 29px auto 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background: #FFFFFF;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
-    display: none;
-
 }
 
 .main-tela3-2 .criarQuizPerguntas-CaixaPergunta h4 {
@@ -649,20 +804,36 @@ a:hover {
     line-height: 23px;
 }
 
-.main-tela3-2 .criarQuizPerguntas-CaixaPergunta img {
+.main-tela3-2 .criarQuizPerguntas-CaixaPergunta ion-icon {
+    font-size: 26px;
+    font-weight: bold;
     margin-right: 25px;
 }
 
-/*Botão para enviar perguntas para criação do quizz*/
-.main-tela3-2 .botaoCriarPerguntas {
+.main-tela3-2 .criarQuizPerguntas-CaixaPergunta.escondido ion-icon {
+    display: none;
+}
+
+.main-tela3-2 .criarQuizPerguntas-CaixaPergunta.escondido {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+    height: 35px;
+    text-align: end;
+}
+
+.main-tela3-2 .criarQuizPerguntas-CaixaPergunta.escondido .tituloPergunta {
+    margin-top: 30px;
+}
+
+.footer-tela3-2 .botaoCriarPerguntas {
     width: 100%;
     margin-top: 46px;
     margin-bottom: 61px;
     display: flex;
     justify-content: center;
+    font-family: 'Roboto', sans-serif;
 }
 
-.main-tela3-2 .botaoCriarPerguntas button {
+.footer-tela3-2 .botaoCriarPerguntas button {
     width: 324px;
     height: 54px;
     background: #EC362D;
@@ -673,13 +844,9 @@ a:hover {
     font-size: 18px;
     line-height: 21px;
     color: #FFF5F4;
+    font-family: 'Roboto', sans-serif;
 }
 
-/* ----------------------------Layout Mobile (Tela 3.2)--------------------------------- */
-
-/* ----------------------------Layout Mobile (Tela 3.3)--------------------------------- */
-
-/*Parte superior (título da página)*/
 .header-tela3-3 {
     font-family: 'Roboto', sans-serif;
     height: 69px;
@@ -704,7 +871,6 @@ a:hover {
     color: #FFFFFF;
 }
 
-/*Conteúdo principal (níveis para criação do quizz)*/
 .main-tela3-3 {
     font-family: 'Roboto', sans-serif;
     width: 100%;
@@ -779,7 +945,6 @@ a:hover {
     font-style: italic;
 }
 
-/*Parte que dá acesso ao segundo e terceiro blocos de níveis (editar)*/
 .main-tela3-3 .criarQuizNiveis-CaixaNiveis {
     width: 100%;
     height: 74px;
@@ -789,8 +954,6 @@ a:hover {
     align-items: center;
     background: #FFFFFF;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
-    /* display: none; */
-
 }
 
 .main-tela3-3 .criarQuizNiveis-CaixaNiveis h4 {
@@ -805,8 +968,7 @@ a:hover {
     margin-right: 25px;
 }
 
-/*Botão para enviar níveis para criação do quizz*/
-.main-tela3-3 .botaoCriarNiveis {
+.footer-tela3-3 .botaoFinalizar {
     width: 100%;
     margin-top: 28px;
     margin-bottom: 136px;
@@ -814,7 +976,7 @@ a:hover {
     justify-content: center;
 }
 
-.main-tela3-3 .botaoCriarNiveis button {
+.footer-tela3-3 .botaoFinalizar button {
     width: 324px;
     height: 54px;
     background: #EC362D;
@@ -827,12 +989,6 @@ a:hover {
     color: #FFF5F4;
 }
 
-/* ----------------------------Layout Mobile (Tela 3.3)--------------------------------- */
-
-
-/* ----------------------------Layout Mobile (Tela 3.4)--------------------------------- */
-
-/* Barra fixa do topo */
 .header-tela3-4 {
     font-family: 'Roboto', sans-serif;
     height: 69px;
@@ -848,7 +1004,6 @@ a:hover {
     display: none;
 }
 
-/* Título da barra fixa */
 .header-tela3-4 h1 {
     color: #FFF;
     font-weight: 700;
@@ -857,7 +1012,6 @@ a:hover {
     text-align: center;
 }
 
-/* conteúdo principal da página */
 .main-tela3-4 {
     font-family: 'Roboto', sans-serif;
     display: flex;
@@ -875,7 +1029,6 @@ a:hover {
     margin-bottom: 29px;
 }
 
-/* configurações da imagem */
 .main-tela3-4 .elementos3-4 {
     width: 340px;
     height: 181px;
@@ -885,7 +1038,6 @@ a:hover {
 
 }
 
-/* configurações do texto que descreve a imagem */
 .main-tela3-4 a {
     position: absolute;
     text-decoration: none;
@@ -900,7 +1052,6 @@ a:hover {
     top: 293px;
 }
 
-/* configurações dos botões do final da página */
 .main-tela3-4 button {
     border: none;
 }
@@ -924,5 +1075,3 @@ a:hover {
     background-color: #FFFFFF;
     margin-top: 15px;
 }
-
-/* ----------------------------Layout Mobile (Tela 3.4)--------------------------------- */
