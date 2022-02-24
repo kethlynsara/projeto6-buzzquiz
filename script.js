@@ -7,6 +7,7 @@ let idQuizz = "";
 let perguntas = null;
 let niveis = null;
 let todasPerguntas = [];
+let pergunta = [];
 
 
 function buscarQuizzes() {
@@ -112,6 +113,8 @@ function aparecerTela2(id) {
 
 
     quizzSelecionado = (vetor.filter((obj) => obj.id === id))[0];
+    console.log(quizzSelecionado);
+
     headerTela2.innerHTML = `<h1>BuzzQuizz</h1>`;
     mainTela2.innerHTML += `
             <!-- Título e imagem do quizz -->
@@ -124,56 +127,105 @@ function aparecerTela2(id) {
     for (let i = 0; i < quizzSelecionado.questions.length; i++) {
         mainTela2.innerHTML += `
         <div class="box-respostas box${i}">
-            <div class="pergunta"  style="background-color: ${quizzSelecionado['questions'][i]['color']}" data-identifier="question">
-                <p>${quizzSelecionado['questions'][i]['title']}</p>
+            <div class="pergunta pergunta${i}"  style="background-color: ${quizzSelecionado['questions'][i]['color']}" data-identifier="question">
+                <p class="perguntaSelecionada${i}">${quizzSelecionado['questions'][i]['title']}</p>
             </div>
             <div class="respostas respostas${i}"></div>        
-        `;        
+        `;
+        pergunta = document.querySelector(`.perguntaSelecionada${i}`);
+        console.log(pergunta);
+        console.log(pergunta.innerText);
         for (let j = 0; j < quizzSelecionado.questions[i].answers.length; j++) {
             let respostas = document.querySelector(`.box${i} .respostas`);
             quizzSelecionado.questions[i].answers.sort(comparador);
-            respostas.innerHTML +=`
-            <div class="resposta respostas${i}" onclick="vericarRespostas()" data-identifier="answer">
+            respostas.innerHTML += `
+            <div class="resposta respostas${i}" onclick="verificarRespostas(this, 'imagem-quizz${j}', 'texto-quizz${j}', 'nao-selecionado')" data-identifier="answer">
                 <div class="opcao">
-                    <img class="imagem-quizz" src="${quizzSelecionado.questions[i].answers[j].image}"
+                    <img class="imagem-quizz${j} nao-selecionado" src="${quizzSelecionado.questions[i].answers[j].image}"
                         alt="resposta1">
                 </div>
-                <p class="p${j} texto-quizz${j}">${quizzSelecionado.questions[i].answers[j].text}</p>
+                <p class="p${j} texto-quizz${j} nao-selecionado">${quizzSelecionado.questions[i].answers[j].text}</p>
             </div>
             `;
         }
+
     }
+}  
+
+let imagemSelecionada = null;
+let pSelecionado = null;
+let pSelecionadoN;
+
+function aplicarOpacidade(respostaSelecionada) {
+    respostaSelecionada.classList.add("selecionado");
+
+    const divRespostas = respostaSelecionada.parentNode;
+
+    //transforma node list em array
+    const possiveisRespostas = Array.from(
+        divRespostas.querySelectorAll(".resposta")
+    );
+
+    possiveisRespostas.forEach((possivelResposta) =>  {
+        if (!possivelResposta.classList.contains("selecionado")) {
+            possivelResposta.classList.add("opacidade");
+        }
+    });
 }
 
-function vericarRespostas(quizzClicado) {
-    for(let i = 0; i < vetor.length; i++) {
-        if (idQuizz === vetor[i].id)  {
-            for(let j = 0; j < vetor[i].questions.length; j++) {
-                for(let k = 0; k < vetor[i].questions[j].answers.length; k++) {
-                    let imagem = document.querySelector(`.respostas${i} .imagem-quizz`);
-                    let p = document.querySelector(`.respostas${i} .texto-quizz${k}`);
-                    if (vetor[i].questions[j].answers[k].isCorrectAnswer === 'true') {
-                        respostaCerta(p, imagem);
-                    } else {
-                        respostaErrada(p, imagem);
-                    }
+function verificarRespostas(elemento, imagem, p, naoSelecionado) {
+    aplicarOpacidade(elemento);
+    console.log(elemento);
+    elemento.classList.add("selecionado");
+    if (elemento.classList.contains("selecionado") ) {
+        imagemSelecionada = imagem;
+        pSelecionado = p;
+        console.log(imagemSelecionada);
+        console.log(pSelecionado);
+    }
+    if (imagem.classList.contains("nao-selecionado")) {
+        pSelecionadoN = naoSelecionado;
+        console.log(pSelecionadoN);
+    }
+
+    for (let j = 0; j < quizzSelecionado.questions.length; j++) {
+        //  console.log(`pergunta ${j}:`)
+        //  console.log(quizzSelecionado.questions[j]);
+        for (let k = 0; k < quizzSelecionado.questions[j].answers.length; k++) {
+            //  console.log(`resposta ${k} - pergunta ${j}:`)
+            //  console.log(quizzSelecionado.questions[j].answers[k]);
+            // console.log(pSelecionado);
+            // console.log(imagemSelecionada);
+            let textoResposta = document.querySelector(`.${pSelecionado}`);
+            let imgResposta = document.querySelector(`.${imagemSelecionada}`);
+            let p = document.querySelector(`.texto-quizz${k}`);
+            let imgResposta2 = document.querySelector(`.imagem-quizz${k}`);
+            console.log(textoResposta.innerText);
+            console.log(imgResposta.src);
+            if (textoResposta.innerText === quizzSelecionado.questions[j].answers[k].text && imgResposta.src === quizzSelecionado.questions[j].answers[k].image) {
+                if (quizzSelecionado.questions[j].answers[k].isCorrectAnswer === true) {
+                    textoResposta.classList.add("resposta-certa");
+                    imgResposta.classList.add("opacidadeNone");
+                    // console.log("resposta certa");
+                } else {
+                    // console.log("resposta errada");
+                    textoResposta.classList.add("resposta-errada");
+                    imgResposta.classList.add("opacidadeNone");
                 }
-            }      
-            i = vetor.length + 1; 
+            }
+            else if (textoResposta.innerText !== p.innerText) {
+                imgResposta2.classList.add("opacidade");
+            }
+
         }
     }
+
 }
 
-function respostaCerta(p, imagem) {
-    p.setAttribute("style", "color: #009C22");
-}
-function respostaErrada(p, imagem) {
-    p.setAttribute("style", "color: #FF0B0B");
-    imagem.document.classList.add("opacity");
-}
-
-function comparador() { 
-	return Math.random() - 0.5; 
+// console.log(`pergunta ${j}:`)
+// console.log(quizzSelecionado.questions[j]);
+function comparador() {
+    return Math.random() - 0.5;
 }
 
 let vetor = [];

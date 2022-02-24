@@ -539,6 +539,19 @@ a:hover {
     margin-bottom: 66px;
 }
 
+.resposta-certa {
+    color: #009C22;
+}
+.resposta-errada {
+    color: #FF0B0B;
+}
+.opacidade {
+    opacity: 0.3;
+}
+.opacidadeNone {
+    opacity: 0;
+}
+
 .header-tela3-1 {
     font-family: 'Roboto', sans-serif;
     height: 69px;
