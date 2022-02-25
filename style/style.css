@@ -14,7 +14,7 @@
         left: 300px;
     }
 
-    .tela2 .box-respostas-impar {
+    .tela2 .box-respostas {
         width: 759px;
         height: 676px;
         margin: 0 auto;
@@ -24,7 +24,7 @@
         align-items: center;
     }
 
-    .tela2 .box-respostas-impar .pergunta {
+    .tela2 .box-respostas .pergunta {
         width: 688.16px;
         height: 137.99px;
         display: flex;
@@ -32,7 +32,7 @@
         align-items: center;
     }
 
-    .tela2 .box-respostas-impar .respostas p {
+    .tela2 .box-respostas .respostas p {
         font-size: 20px;
         line-height: 23px;
         width: 100%;
@@ -40,7 +40,7 @@
         padding: 0;
     }
 
-    .tela2 .box-respostas-impar .respostas {
+    .tela2 .box-respostas .respostas {
         width: 688.16px;
         height: 490px;
         margin: 0;
@@ -50,73 +50,23 @@
         align-items: center;
     }
 
-    .tela2 .box-respostas-impar .respostas p {
+    .tela2 .box-respostas .respostas p {
         font-size: 20px;
         line-height: 23px;
     }
 
-    .tela2 .box-respostas-impar .opcao img {
+    .tela2 .box-respostas .opcao img {
         margin: 0;
         padding: 0;
         width: 329.91px;
         height: 175.2px;
     }
 
-    .tela2 .box-respostas-impar .opcao {
+    .tela2 .box-respostas .opcao {
         width: 329.91px;
         height: 185px;
     }
 
-    .tela2 .box-respostas-par {
-        width: 759px;
-        height: 676px;
-        margin: 42px auto;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .tela2 .box-respostas-par .pergunta {
-        width: 688.16px;
-        height: 137.99px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .tela2 .box-respostas-par .respostas {
-        width: 688.16px;
-        height: 490px;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .tela2 .box-respostas-par .respostas p {
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        font-size: 20px;
-        line-height: 23px;
-    }
-
-    .tela2 .box-respostas-par .opcao img {
-        margin: 0;
-        padding: 0;
-        width: 329.91px;
-        height: 175.2px;
-    }
-
-    .tela2 .box-respostas-par .opcao {
-        width: 329.91px;
-        height: 185px;
-        margin: 0;
-        padding: 0;
-    }
 
     .tela-final-quizz {
         width: 759px;
@@ -401,15 +351,24 @@ a:hover {
     font-size: 37px;
     line-height: 43.36px;
     text-align: center;
+    /* background-color: #009C22;
+    z-index: 5; */
 }
-
 
 .quizz-header {
     margin-top: 53px;
     margin-bottom: 24px;
     width: 100%;
     height: 142px;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(https://www.animalepetshop.com.br/wp-content/uploads/2021/11/Spitz-Lula-Da-Pomernia-Creme-Perola-Fortaleza-Animale-Petshop.jpg);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 64.58%, #000000 100%);
+
+}
+
+.quizz-header img {
+    margin-bottom: 24px;
+    width: 100%;
+    height: 142px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 64.58%, #000000 100%);
 }
 
 .quizz-header p {
@@ -427,7 +386,7 @@ a:hover {
     font-family: 'Roboto', sans-serif;
 }
 
-.box-respostas-impar, .box-respostas-par {
+.box-respostas {
     background-color: #FFF;
     margin-bottom: 28px;
     padding: 18px;
@@ -436,14 +395,6 @@ a:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-.box-respostas-impar .pergunta {
-    background-color: #434CA0;
-}
-
-.box-respostas-par .pergunta {
-    background-color: #A0438D;
 }
 
 .pergunta {
@@ -499,8 +450,7 @@ a:hover {
     color: #FF0B0B;
 }
 
-.box-respostas-impar .opacidade {
-    background: url(../images/image\ 3.png);
+.opacidade {
     opacity: 0.3;
 }
 
@@ -587,6 +537,19 @@ a:hover {
     color: #818181;
     background-color: #FFFFFF;
     margin-bottom: 66px;
+}
+
+.resposta-certa {
+    color: #009C22;
+}
+.resposta-errada {
+    color: #FF0B0B;
+}
+.opacidade {
+    opacity: 0.3;
+}
+.opacidadeNone {
+    opacity: 0;
 }
 
 .header-tela3-1 {
@@ -956,6 +919,12 @@ a:hover {
     align-items: center;
     background: #FFFFFF;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+}
+
+.main-tela3-3 .criarQuizPerguntas-CaixaNiveis ion-icon {
+    font-size: 26px;
+    font-weight: bold;
+    margin-right: 25px;
 }
 
 .main-tela3-3 .criarQuizNiveis-CaixaNiveis h4 {
