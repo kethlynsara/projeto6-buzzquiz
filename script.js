@@ -1,12 +1,19 @@
 const BUZZQUIZZAPI = "https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes";
-let titulo = document.querySelector(".tituloQuiz").value;
-let imagem = document.querySelector(".criarQuizInfoBasica .imagemQuiz").value;
+let titulo;
+let imagem;
 let inputLength;
 let quizzSelecionado = "";
 let idQuizz = "";
 let perguntas = null;
 let niveis = null;
 let todasPerguntas = [];
+let itens = [];
+let itensObjeto = {
+    title: "",
+    image: "",
+    questions: [],
+    levels: []
+};
 let pergunta = [];
 
 
@@ -230,6 +237,8 @@ function criarPerguntas() {
 
     let tituloCaracteres = document.querySelector(".tituloQuiz").value;
     let validacaoURL = document.querySelector(".criarQuizInfoBasica .imagemQuiz").value;
+    titulo = document.querySelector(".tituloQuiz").value;
+    imagem = document.querySelector(".criarQuizInfoBasica .imagemQuiz").value;
     perguntas = parseInt(document.querySelector(".criarQuizInfoBasica .perguntasQuiz").value);
     niveis = parseInt(document.querySelector(".criarQuizInfoBasica .niveisQuiz").value);
 
@@ -280,22 +289,35 @@ function selecionarPerguntas() {
         </div>
 
         <div class="criarQuizPerguntas criarQuizPerguntas${i} escondido">
-            <input class="perguntaQuizz${i}" type="text" placeholder="Texto da pergunta" data-identifier="question" >
-            <input class="corQuizz${i}" type="text" placeholder="Cor de fundo da pergunta" data-identifier="question" >
+
+            <div class="dados-pergunta">
+                <input class="perguntaQuizz${i}" type="text" placeholder="Texto da pergunta">
+                <input class="corQuizz${i}" type="text" placeholder="Cor de fundo da pergunta">
+            </div>
 
             <h4>Resposta correta</h4>
-            <input class="respostaUmCorretaQuizz${i}" type="text" placeholder="Resposta correta" data-identifier="question" >
-            <input class="imagemUrlCorreta${i}" type="text" placeholder="URL da imagem" data-identifier="question" >
+
+            <div class="resposta-correta">
+                <input class="respostaUmCorretaQuizz${i}" type="text" placeholder="Resposta correta">
+                <input class="imagemUrlCorreta${i}" type="text" placeholder="URL da imagem">
+            </div>
 
             <h4>Respostas incorretas</h4>
-            <input class="respostaIncorretaUmQuizz${i}" type="text" placeholder="Resposta incorreta 1" data-identifier="question" >
-            <input class="imagemUrlIncorretaUm${i}" class="input-espaco" type="text" placeholder="URL da imagem 1" data-identifier="question" >
 
-            <input class="respostaIncorretaDoisQuizz${i}" type="text" placeholder="Resposta incorreta 2" data-identifier="question" >
-            <input class="imagemUrlIncorretaDois${i}" class="input-espaco" type="text" placeholder="URL da imagem 2" data-identifier="question" >
+            <div class="resposta-errada primeira-resposta-errada">
+                <input class="respostaIncorretaUmQuizz${i}" type="text" placeholder="Resposta incorreta 1">
+                <input class="imagemUrlIncorretaUm${i}" class="input-espaco" type="text" placeholder="URL da imagem 1">
+            </div>
 
-            <input class="respostaIncorretaTresQuizz${i}" type="text" placeholder="Resposta incorreta 3" data-identifier="question" >
-            <input class="imagemUrlIncorretaTres${i}" type="text" placeholder="URL da imagem 3" data-identifier="question" >
+            <div class="resposta-errada">
+                <input class="respostaIncorretaDoisQuizz${i}" type="text" placeholder="Resposta incorreta 2">
+                <input class="imagemUrlIncorretaDois${i}" class="input-espaco" type="text" placeholder="URL da imagem 2">
+            </div>
+
+            <div class="resposta-errada"> 
+                <input class="respostaIncorretaTresQuizz${i}" type="text" placeholder="Resposta incorreta 3">
+                <input class="imagemUrlIncorretaTres${i}" type="text" placeholder="URL da imagem 3">
+            </div>
         </div>
         `;
 
@@ -314,33 +336,114 @@ function abrirFecharPerguntas(botaoSelecionar) {
 
 }
 
-function pegarDados(indice) {
+function validarHexadecimal(codigoHexadecimal) {
 
-    let nomeTitulo = document.querySelector('.perguntaQuizz' + indice).value;
-    let cor = document.querySelector('.corQuizz' + indice).value;
-    let respostaCorreta = document.querySelector('.respostaUmCorretaQuizz' + indice).value;
-    let imagemUrl = document.querySelector('.imagemUrlCorreta' + indice).value;
-    let respostaIncorretaUm = document.querySelector('.respostaIncorretaUmQuizz' + indice).value;
-    let urlIncorretaUm = document.querySelector('.imagemUrlIncorretaUm' + indice).value;
-    let respostaIncorretaDois = document.querySelector('.respostaIncorretaDoisQuizz' + indice).value;
-    let urlIncorretaDois = document.querySelector('.imagemUrlIncorretaDois' + indice).value;
-    let respostaIncorretaTres = document.querySelector('.respostaIncorretaTresQuizz' + indice).value;
-    let urlIncorretaTres = document.querySelector('.imagemUrlIncorretaTres' + indice).value;
-}
+    const validacaoHexadecimal = pattern('^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$');
 
-function juntarDados() {
+    if (!!validacaoHexadecimal.match(codigoHexadecimal)) {
 
-    for (let i = 1; i <= perguntas; i++) {
-        pegarDados(i);
+        return true;
+
+    } else {
+
+        return false;
     }
-    itens.push(todasPerguntas);
-    console.log(itens);
-    converterEmObjeto();
 
 }
 
-function converterEmObjeto() {
-    const objeto = Object.assign({}, itens);
-    console.log(objeto);
+
+function validarPerguntasCriarNovoQuizz() {
+
+        let dadosPergunta = document.querySelectorAll(".dados-pergunta input");
+        let validacaoPerguntaTexto = dadosPergunta[0].value;
+        let validacaoCor = dadosPergunta[1].value;
+
+        let qtdCaracteres = validacaoPerguntaTexto.length;
+
+        console.log("Quantidade de caracteres:" + qtdCaracteres);
+        console.log("Cor:" + validacaoCor);
+        console.log("Validação cor:" + validarUrl(validacaoCor));
+
+        if (qtdCaracteres >= 20 && validarUrl(validacaoCor)) {
+
+            let validacaoRespostaCorreta = document.querySelectorAll(".resposta-correta input");
+            let validacaoRespostaCorretaTexto = validacaoRespostaCorreta[0].value;
+            let validacaoImgRespostaCorreta = validacaoRespostaCorreta[1].value;
+
+            if (validacaoRespostaCorretaTexto !== "" && validarHexadecimal(validacaoImgRespostaCorreta)) {
+
+                let respostasErradasDivs = document.querySelectorAll(".primeira-resposta-errada");
+
+                    let validacaoRespostaTexto = respostasErradasDivs[0].value;
+                    let validacaoImgResposta = respostasErradasDivs[1].value;
+
+                    if (validacaoRespostaTexto !== "" && validarHexadecimal(validacaoImgResposta)) {
+                        console.log("deu certo!")
+                    }else{
+                        console.log("deu ruim!")
+                    }
+
+            }
+        
+
+    }
+
 }
 
+
+function obterPerguntasCriarNovoQuizz() {
+
+    itensObjeto = {
+        title: titulo,
+        image: imagem,
+        questions: [],
+        levels: []
+    };
+
+    const perguntasDivs = document.querySelectorAll(".criarQuizPerguntas");
+    perguntasDivs.forEach(perguntaDiv => {
+      const pergunta = {
+        answers: []
+      };
+  
+      const dadosPergunta = perguntaDiv.querySelectorAll(".dados-pergunta input");
+      const perguntaTexto = dadosPergunta[0].value;
+      const cor = dadosPergunta[1].value;
+  
+      pergunta.title = perguntaTexto;
+      pergunta.color = cor;
+  
+      const respostaCorretaInputs = perguntaDiv.querySelectorAll(".resposta-correta input");
+      const respostaCorretaTexto = respostaCorretaInputs[0].value;
+      const imgRespostaCorreta = respostaCorretaInputs[1].value;
+  
+      const resposta = {
+        text: respostaCorretaTexto,
+        image: imgRespostaCorreta,
+        isCorrectAnswer: true
+      }
+  
+      pergunta.answers.push(resposta);
+  
+      const respostasErradas = [];
+      const respostasErradasDivs = perguntaDiv.querySelectorAll(".resposta-errada");
+      respostasErradasDivs.forEach(respostaErradaDiv => {
+        const inputs = respostaErradaDiv.querySelectorAll("input");
+        const respostaTexto = inputs[0].value;
+        const imgResposta = inputs[1].value;
+  
+  
+        const resposta = {
+          text: respostaTexto,
+          image: imgResposta,
+          isCorrectAnswer: false
+        }
+  
+        pergunta.answers.push(resposta);
+  
+      });
+  
+      itensObjeto.questions.push(pergunta);
+    })
+  console.log(itensObjeto);
+  }
