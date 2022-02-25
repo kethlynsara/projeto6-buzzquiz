@@ -139,8 +139,6 @@ function aparecerTela2(id) {
             <div class="respostas respostas${i}"></div>        
         `;
         pergunta = document.querySelector(`.perguntaSelecionada${i}`);
-        // console.log(pergunta);
-        // console.log(pergunta.innerText);
         for (let j = 0; j < quizzSelecionado.questions[i].answers.length; j++) {
             let respostas = document.querySelector(`.box${i} .respostas`);
             quizzSelecionado.questions[i].answers.sort(comparador);
