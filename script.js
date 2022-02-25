@@ -113,7 +113,6 @@ function aparecerTela2(id) {
 
 
     quizzSelecionado = (vetor.filter((obj) => obj.id === id))[0];
-    console.log(quizzSelecionado);
 
     headerTela2.innerHTML = `<h1>BuzzQuizz</h1>`;
     mainTela2.innerHTML += `
@@ -133,18 +132,18 @@ function aparecerTela2(id) {
             <div class="respostas respostas${i}"></div>        
         `;
         pergunta = document.querySelector(`.perguntaSelecionada${i}`);
-        console.log(pergunta);
-        console.log(pergunta.innerText);
+        // console.log(pergunta);
+        // console.log(pergunta.innerText);
         for (let j = 0; j < quizzSelecionado.questions[i].answers.length; j++) {
             let respostas = document.querySelector(`.box${i} .respostas`);
             quizzSelecionado.questions[i].answers.sort(comparador);
             respostas.innerHTML += `
-            <div class="resposta respostas${i}" onclick="verificarRespostas(this, 'imagem-quizz${j}', 'texto-quizz${j}', 'nao-selecionado')" data-identifier="answer">
+            <div class="resposta respostas${i}" onclick="verificarRespostas(this, 'imagem-quizz${j}', 'texto-quizz${j}')" data-identifier="answer">
                 <div class="opcao">
-                    <img class="imagem-quizz${j} nao-selecionado" src="${quizzSelecionado.questions[i].answers[j].image}"
+                    <img class="imagem-quizz${j}" src="${quizzSelecionado.questions[i].answers[j].image}"
                         alt="resposta1">
                 </div>
-                <p class="p${j} texto-quizz${j} nao-selecionado">${quizzSelecionado.questions[i].answers[j].text}</p>
+                <p class="p${j} texto-quizz${j} p-resposta">${quizzSelecionado.questions[i].answers[j].text}</p>
             </div>
             `;
         }
@@ -161,7 +160,6 @@ function aplicarOpacidade(respostaSelecionada) {
 
     const divRespostas = respostaSelecionada.parentNode;
 
-    //transforma node list em array
     const possiveisRespostas = Array.from(
         divRespostas.querySelectorAll(".resposta")
     );
@@ -173,57 +171,39 @@ function aplicarOpacidade(respostaSelecionada) {
     });
 }
 
-function verificarRespostas(elemento, imagem, p, naoSelecionado) {
+function verificarRespostas(elemento, imagem, p) {
     aplicarOpacidade(elemento);
-    console.log(elemento);
+
     elemento.classList.add("selecionado");
+
     if (elemento.classList.contains("selecionado") ) {
         imagemSelecionada = imagem;
         pSelecionado = p;
-        console.log(imagemSelecionada);
-        console.log(pSelecionado);
     }
-    if (imagem.classList.contains("nao-selecionado")) {
-        pSelecionadoN = naoSelecionado;
-        console.log(pSelecionadoN);
-    }
+    
+    const divRespostas = elemento.parentNode;
+
+    const possiveisImagens = Array.from(
+        divRespostas.querySelectorAll(".resposta .opcao img")
+    );
+
+    const possiveisRespostas = Array.from(
+        divRespostas.querySelectorAll(".resposta .p-resposta")
+    );
 
     for (let j = 0; j < quizzSelecionado.questions.length; j++) {
-        //  console.log(`pergunta ${j}:`)
-        //  console.log(quizzSelecionado.questions[j]);
         for (let k = 0; k < quizzSelecionado.questions[j].answers.length; k++) {
-            //  console.log(`resposta ${k} - pergunta ${j}:`)
-            //  console.log(quizzSelecionado.questions[j].answers[k]);
-            // console.log(pSelecionado);
-            // console.log(imagemSelecionada);
-            let textoResposta = document.querySelector(`.${pSelecionado}`);
-            let imgResposta = document.querySelector(`.${imagemSelecionada}`);
-            let p = document.querySelector(`.texto-quizz${k}`);
-            let imgResposta2 = document.querySelector(`.imagem-quizz${k}`);
-            console.log(textoResposta.innerText);
-            console.log(imgResposta.src);
-            if (textoResposta.innerText === quizzSelecionado.questions[j].answers[k].text && imgResposta.src === quizzSelecionado.questions[j].answers[k].image) {
+            if (possiveisRespostas[k].innerText === quizzSelecionado.questions[j].answers[k].text && possiveisImagens[k].src === quizzSelecionado.questions[j].answers[k].image) {
                 if (quizzSelecionado.questions[j].answers[k].isCorrectAnswer === true) {
-                    textoResposta.classList.add("resposta-certa");
-                    imgResposta.classList.add("opacidadeNone");
-                    // console.log("resposta certa");
+                    possiveisRespostas[k].classList.add("resposta-certa");
                 } else {
-                    // console.log("resposta errada");
-                    textoResposta.classList.add("resposta-errada");
-                    imgResposta.classList.add("opacidadeNone");
+                    possiveisRespostas[k].classList.add("resposta-errada");
                 }
             }
-            else if (textoResposta.innerText !== p.innerText) {
-                imgResposta2.classList.add("opacidade");
-            }
-
         }
     }
-
 }
 
-// console.log(`pergunta ${j}:`)
-// console.log(quizzSelecionado.questions[j]);
 function comparador() {
     return Math.random() - 0.5;
 }
