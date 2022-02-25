@@ -750,7 +750,7 @@ a:hover {
 .main-tela3-2 .criarQuizPerguntas input {
     padding-left: 14px;
     padding-right: 14px;
-    margin: 0 auto;
+    margin: 0 auto 18px;
     width: 341px;
     height: 46px;
     background: #FFFFFF;
@@ -758,10 +758,6 @@ a:hover {
     border-radius: 5px;
     font-size: 19px;
     line-height: 22px;
-}
-
-.main-tela3-2 .criarQuizPerguntas .input-espaco {
-    margin-bottom: 18px;
 }
 
 .main-tela3-2 .criarQuizPerguntas input::placeholder, .footer-tela3-2 .criarQuizPerguntas input::placeholder {
@@ -778,6 +774,11 @@ a:hover {
 .main-tela3-2 .criarQuizPerguntas input::-ms-input-placeholder, .footer-tela3-2 .criarQuizPerguntas input::-ms-input-placeholder {
     color: #BABABA;
     font-style: italic;
+}
+
+.criarQuizPerguntas .dados-pergunta, .criarQuizPerguntas .resposta-correta, .criarQuizPerguntas .resposta-errada{
+    width: 341px;
+    margin: 0 auto 18px;
 }
 
 .criarQuizPerguntas.escondido {
@@ -821,7 +822,8 @@ a:hover {
 }
 
 .main-tela3-2 .criarQuizPerguntas-CaixaPergunta.escondido .tituloPergunta {
-    margin-top: 30px;
+    margin-top: 40px;
+    padding-bottom: 30px;
 }
 
 .footer-tela3-2 .botaoCriarPerguntas {
